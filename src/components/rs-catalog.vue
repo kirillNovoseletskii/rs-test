@@ -20,45 +20,43 @@ export default {
     components: {
         rsPicture
     },
-    data() {
-        return {
-            pict_data: [
-                {
-                    id: 1,
-                    src: require('../assets/1.png'), 
-                    title: 'Рождение Венеры', 
-                    author: 'Сандро Боттичелли',
-                    price: 1000000,
-                    discount: true,
-                    inCart: false
+    data: () => ({
+        pict_data: [
+            {
+                id: 1,
+                src: require('../assets/1.png'), 
+                title: 'Рождение Венеры', 
+                author: 'Сандро Боттичелли',
+                price: 1000000,
+                discount: true,
+                inCart: false
                 },
                 {
-                    id: 2,
-                    src: require('../assets/2.jpg'),
-                    title: 'Тайная вечеря',
-                    author: 'Леонардо да Винчи ',
-                    price: 3000000,
-                    discount: false,
-                    inCart: false
-                },
-                {
-                    id: 3,
-                    src: require('../assets/3.png'),
-                    title: 'Сотворение Адама',
-                    author: 'Микеланджело',
-                    price: 5000000,
-                    discount: true,
-                    inCart: true
-                },
-                {
-                    id: 4,
-                    src: require('../assets/4.png'),
-                    title: 'Урок анатомии',
-                    author: 'Рембрандт'
-                }
-            ]
-        }
-    },
+                id: 2,
+                src: require('../assets/2.jpg'),
+                title: 'Тайная вечеря',
+                author: 'Леонардо да Винчи ',
+                price: 3000000,
+                discount: false,
+                inCart: false
+            },
+            {
+                id: 3,
+                src: require('../assets/3.png'),
+                title: 'Сотворение Адама',
+                author: 'Микеланджело',
+                price: 5000000,
+                discount: true,
+                inCart: true
+            },
+            {
+                id: 4,
+                src: require('../assets/4.png'),
+                title: 'Урок анатомии',
+                author: 'Рембрандт'
+            }
+        ]
+    }),
     methods: {
         addToCart(val){
             this.pict_data.filter(i => i.title == val)[0].inCart = true

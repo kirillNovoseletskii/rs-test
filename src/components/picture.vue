@@ -13,7 +13,7 @@
                 </div>
                 <button 
                     @click="addToCart"
-                    :class="inCart?'picture__buy-btn incart':'picture__buy-btn no-cart'" 
+                    :class="{inCart: 'incart'}"
                     :style="loading?'cursor:progress; background: #C1B4B1;':'cursor:pointer;'"
                     :disabled='inCart'
                     v-if="price">
@@ -29,12 +29,10 @@
 import axios from 'axios'
 export default {
     props: ["src", "title", "author", "price", "discount", 'inCart'],
-    data() {
-        return {
-            loading: false,
-            inCartLoc: false
-        }
-    },
+    data:() => ({
+        loading: false,
+        inCartLoc: false
+    }),
     methods: {
         addToCart(){
             this.loading = true
@@ -103,6 +101,10 @@ $font: 'Merriweather', serif;
                 display: flex;
                 align-items: center;
                 justify-content: space-around;
+                background: #382E2B;
+                &:hover{
+                    background: #776763;
+                }
                 .picture__buy-btn{
                     height: 100%;
                     width: 118px;
@@ -111,12 +113,6 @@ $font: 'Merriweather', serif;
                     transition: .3s;
                     &:focus{
                         outline: none;
-                    }
-                }
-                .no-cart{
-                    background: #382E2B;
-                    &:hover{
-                        background: #776763;
                     }
                 }
                 .incart{
@@ -140,8 +136,7 @@ $font: 'Merriweather', serif;
                         font-size: 16px;
                         font-family: $font;
                     }
-                }
-                
+                }             
             }
         }
     }

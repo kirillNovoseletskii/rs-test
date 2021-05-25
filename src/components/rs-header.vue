@@ -28,11 +28,9 @@ export default {
         rsLogo,
         rsLinks
     },
-    data() {
-        return {
-            links: ["Каталог", "Доставка", "Оплата", "Контакты", "О галерее"]
-        }
-    }
+    data:() => ({
+        links: ["Каталог", "Доставка", "Оплата", "Контакты", "О галерее"]    
+    })
 }
 </script>
 <style lang="scss">
